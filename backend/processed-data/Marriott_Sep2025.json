@@ -1,0 +1,7 @@
+{
+  "hotelName": "Marriott_Sep2025",
+  "data": [
+    {"hotelName":"Marriott_Sep2025","date":"2025-09-01","metrics":{"revenue":12000,"ADR":150,"RevPAR":105,"occupancy":70},"sourceFile":"Marriott_Sep2025.pdf","createdAt":"2025-10-01"},
+    {"hotelName":"Marriott_Sep2025","date":"2025-09-02","metrics":{"revenue":13000,"ADR":155,"RevPAR":108,"occupancy":70},"sourceFile":"Marriott_Sep2025.pdf","createdAt":"2025-10-01"}
+  ]
+}

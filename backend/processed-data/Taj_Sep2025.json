@@ -1,0 +1,7 @@
+{
+  "hotelName": "Taj_Sep2025",
+  "data": [
+    {"hotelName":"Taj_Sep2025","date":"2025-09-01","metrics":{"revenue":9000,"ADR":140,"RevPAR":98,"occupancy":70},"sourceFile":"Taj_Sep2025.pdf","createdAt":"2025-10-01"},
+    {"hotelName":"Taj_Sep2025","date":"2025-09-02","metrics":{"revenue":9500,"ADR":142,"RevPAR":102,"occupancy":72},"sourceFile":"Taj_Sep2025.pdf","createdAt":"2025-10-01"}
+  ]
+}
