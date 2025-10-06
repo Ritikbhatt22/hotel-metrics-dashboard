@@ -36,7 +36,5 @@ app.get('/', (req, res) => {
   res.json({ status: 'ok', message: 'Hotel Metrics Backend' });
 });
 
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
-  console.log(`Server listening on http://localhost:${PORT}`);
-});
+export default app;
+

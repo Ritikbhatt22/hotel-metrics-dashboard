@@ -18,5 +18,8 @@
     "url": "https://github.com/Ritikbhatt22/hotel-metrics-dashboard/issues"
   },
   "homepage": "https://github.com/Ritikbhatt22/hotel-metrics-dashboard#readme",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@dataconnect/generated": "file:src/dataconnect-generated"
+  }
 }
