@@ -1,7 +1,0 @@
-{
-  "hotelName": "Hyatt_Data",
-  "data": [
-    {"hotelName":"Hyatt_Data","date":"2025-09-01","metrics":{"revenue":8000,"ADR":130,"RevPAR":91,"occupancy":70},"sourceFile":"Hyatt_Data.xlsx","createdAt":"2025-10-01"},
-    {"hotelName":"Hyatt_Data","date":"2025-09-02","metrics":{"revenue":8200,"ADR":132,"RevPAR":92,"occupancy":70},"sourceFile":"Hyatt_Data.xlsx","createdAt":"2025-10-01"}
-  ]
-}

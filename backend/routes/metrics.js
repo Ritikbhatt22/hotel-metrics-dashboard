@@ -116,4 +116,55 @@ router.post('/date-range', async (req, res) => {
   }
 });
 
+router.delete('/:hotelName', async (req, res) => {
+  try {
+    const { hotelName } = req.params;
+    if (isFirebaseInitialized()) {
+      const db = admin.firestore();
+      const collectionRef = db.collection('hotel_metrics');
+
+      let totalDeleted = 0;
+      while (true) {
+        const snapshot = await collectionRef.where('hotelName', '==', hotelName).limit(500).get();
+        if (snapshot.empty) break;
+        const batch = db.batch();
+        snapshot.forEach((doc) => batch.delete(doc.ref));
+        await batch.commit();
+        totalDeleted += snapshot.size;
+        if (snapshot.size < 500) break;
+      }
+
+      return res.json({ message: 'Hotel metrics deleted successfully', deleted: totalDeleted });
+    }
+    return res.json({ message: 'Hotel metrics deleted successfully' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// backend/routes/metrics.js
+router.delete('/', async (req, res) => {
+  try {
+    if (!isFirebaseInitialized()) return res.json({ message: 'No Firebase instance' });
+
+    const db = admin.firestore();
+    const collectionRef = db.collection('hotel_metrics');
+    let totalDeleted = 0;
+    while (true) {
+      const snapshot = await collectionRef.limit(500).get();
+      if (snapshot.empty) break;
+      const batch = db.batch();
+      snapshot.forEach((doc) => batch.delete(doc.ref));
+      await batch.commit();
+      totalDeleted += snapshot.size;
+      if (snapshot.size < 500) break;
+    }
+
+    res.json({ message: 'Hotel metrics deleted successfully', deleted: totalDeleted });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
 export default router;

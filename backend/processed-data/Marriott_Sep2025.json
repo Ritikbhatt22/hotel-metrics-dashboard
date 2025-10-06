@@ -1,7 +1,89 @@
 {
   "hotelName": "Marriott_Sep2025",
   "data": [
-    {"hotelName":"Marriott_Sep2025","date":"2025-09-01","metrics":{"revenue":12000,"ADR":150,"RevPAR":105,"occupancy":70},"sourceFile":"Marriott_Sep2025.pdf","createdAt":"2025-10-01"},
-    {"hotelName":"Marriott_Sep2025","date":"2025-09-02","metrics":{"revenue":13000,"ADR":155,"RevPAR":108,"occupancy":70},"sourceFile":"Marriott_Sep2025.pdf","createdAt":"2025-10-01"}
+    {
+      "hotelName": "Marriott_Sep2025",
+      "date": "2025-08-31T18:30:00.000Z",
+      "metrics": {
+        "revenue": 240000,
+        "ADR": 2000,
+        "RevPAR": 1600,
+        "occupancy": 80
+      },
+      "sourceFile": "Marriott_Sep2025.xlsx",
+      "createdAt": "2025-10-06T17:59:01.531Z"
+    },
+    {
+      "hotelName": "Marriott_Sep2025",
+      "date": "2025-09-01T18:30:00.000Z",
+      "metrics": {
+        "revenue": 210000,
+        "ADR": 2000,
+        "RevPAR": 1400,
+        "occupancy": 70
+      },
+      "sourceFile": "Marriott_Sep2025.xlsx",
+      "createdAt": "2025-10-06T17:59:01.531Z"
+    },
+    {
+      "hotelName": "Marriott_Sep2025",
+      "date": "2025-09-02T18:30:00.000Z",
+      "metrics": {
+        "revenue": 260000,
+        "ADR": 2000,
+        "RevPAR": 1733,
+        "occupancy": 86.7
+      },
+      "sourceFile": "Marriott_Sep2025.xlsx",
+      "createdAt": "2025-10-06T17:59:01.531Z"
+    },
+    {
+      "hotelName": "Marriott_Sep2025",
+      "date": "2025-09-03T18:30:00.000Z",
+      "metrics": {
+        "revenue": 275000,
+        "ADR": 2200,
+        "RevPAR": 1833,
+        "occupancy": 83.3
+      },
+      "sourceFile": "Marriott_Sep2025.xlsx",
+      "createdAt": "2025-10-06T17:59:01.531Z"
+    },
+    {
+      "hotelName": "Marriott_Sep2025",
+      "date": "2025-09-04T18:30:00.000Z",
+      "metrics": {
+        "revenue": 300000,
+        "ADR": 2143,
+        "RevPAR": 2000,
+        "occupancy": 93.3
+      },
+      "sourceFile": "Marriott_Sep2025.xlsx",
+      "createdAt": "2025-10-06T17:59:01.531Z"
+    },
+    {
+      "hotelName": "Marriott_Sep2025",
+      "date": "2025-09-05T18:30:00.000Z",
+      "metrics": {
+        "revenue": 220000,
+        "ADR": 2000,
+        "RevPAR": 1467,
+        "occupancy": 73.3
+      },
+      "sourceFile": "Marriott_Sep2025.xlsx",
+      "createdAt": "2025-10-06T17:59:01.531Z"
+    },
+    {
+      "hotelName": "Marriott_Sep2025",
+      "date": "2025-09-06T18:30:00.000Z",
+      "metrics": {
+        "revenue": 250000,
+        "ADR": 2000,
+        "RevPAR": 1667,
+        "occupancy": 83.3
+      },
+      "sourceFile": "Marriott_Sep2025.xlsx",
+      "createdAt": "2025-10-06T17:59:01.531Z"
+    }
   ]
 }

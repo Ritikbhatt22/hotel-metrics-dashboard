@@ -1,7 +1,0 @@
-{
-  "hotelName": "Oberoi_Data",
-  "data": [
-    {"hotelName":"Oberoi_Data","date":"2025-09-01","metrics":{"revenue":7000,"ADR":120,"RevPAR":84,"occupancy":70},"sourceFile":"Oberoi_Data.xlsx","createdAt":"2025-10-01"},
-    {"hotelName":"Oberoi_Data","date":"2025-09-02","metrics":{"revenue":7300,"ADR":121,"RevPAR":85,"occupancy":70},"sourceFile":"Oberoi_Data.xlsx","createdAt":"2025-10-01"}
-  ]
-}

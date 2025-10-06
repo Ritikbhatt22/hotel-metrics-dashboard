@@ -16,15 +16,55 @@ function computeTotals(rows) {
 }
 
 function normalizeForUI(rows) {
-  return rows.map(r => ({
-    date: new Date(r.date).toISOString().slice(0,10),
-    revenue: r.metrics?.revenue || 0,
-    ADR: r.metrics?.ADR || 0,
-    RevPAR: r.metrics?.RevPAR || 0,
-    occupancy: r.metrics?.occupancy || 0,
-    hotelName: r.hotelName
-  }))
+  return rows.map(r => {
+    // handle Firestore timestamp or string
+    let dateValue = null;
+
+    if (r.date) {
+      // Firestore Timestamp (browser SDK/REST): seconds | _seconds
+      if (typeof r.date === 'object') {
+        const seconds = r.date.seconds ?? r.date._seconds;
+        if (typeof seconds === 'number') {
+          dateValue = new Date(seconds * 1000);
+        } else if (r.date instanceof Date) {
+          dateValue = new Date(r.date.getTime());
+        }
+      }
+      // If still null, try to parse as string/number
+      if (!dateValue) {
+        if (typeof r.date === 'string' || typeof r.date === 'number') {
+          const d = new Date(r.date);
+          if (!isNaN(d)) dateValue = d;
+        }
+      }
+    }
+
+    return {
+      date: dateValue ? dateValue.toISOString().slice(0, 10) : '',
+      revenue: r.metrics?.revenue || 0,
+      ADR: r.metrics?.ADR || 0,
+      RevPAR: r.metrics?.RevPAR || 0,
+      occupancy: r.metrics?.occupancy || 0,
+      hotelName: r.hotelName,
+    };
+  });
 }
+
+ function deleteMetrics(hotelName) {
+  if (!hotelName) {
+    alert('Please select a hotel to delete its metrics.');
+    return;
+  }
+  try{
+     axios.delete(`${API_BASE}/api/metrics/${encodeURIComponent(hotelName)}`).then(res => {
+      window.location.reload();
+    })
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+
 
 export default function DashboardPage() {
   const [all, setAll] = useState([])
@@ -32,7 +72,7 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(false)
 
   const filtered = useMemo(() => {
-    return hotelName ? all.filter(r => r.hotelName === hotelName) : all
+    return hotelName ? all.filter(r => r.hotelName === hotelName) : all;
   }, [all, hotelName])
 
   const rows = useMemo(() => normalizeForUI(filtered), [filtered])
@@ -55,6 +95,24 @@ export default function DashboardPage() {
     return () => { cancel = true }
   }, [])
 
+  const deleteAllMetrics = async () => {
+    try {
+      const res = await axios.delete(`${API_BASE}/api/metrics`);
+      if (res.status === 200) {
+        console.log("✅ Metrics deleted:", res.data);
+        alert("All metrics deleted successfully!");
+        window.location.reload();
+      } else {
+        console.warn("⚠️ Unexpected response:", res.status, res.data);
+      }
+    } catch (error) {
+      console.error(" Failed to delete metrics:", error.message || error);
+      alert("Failed to delete metrics. Please check console logs.");
+    }
+  };
+  
+  
+
   const hotelOptions = useMemo(() => {
     return Array.from(new Set(all.map(r => r.hotelName)))
   }, [all])
@@ -72,6 +130,8 @@ export default function DashboardPage() {
           <option value="">All Hotels</option>
           {hotelOptions.map(h => <option key={h} value={h}>{h}</option>)}
         </select>
+        <button className="bg-blue-600 text-white px-4 py-2 rounded" onClick={()=> deleteMetrics(hotelName)}>Delete Metrics</button>
+        <button className="bg-red-600 text-white px-4 py-2 rounded" onClick={()=> deleteAllMetrics()}>Delete All Metrics</button>
       </div>
 
       <KPIcards totals={totals} />

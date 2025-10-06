@@ -1,7 +1,53 @@
 {
   "hotelName": "Taj_Sep2025",
   "data": [
-    {"hotelName":"Taj_Sep2025","date":"2025-09-01","metrics":{"revenue":9000,"ADR":140,"RevPAR":98,"occupancy":70},"sourceFile":"Taj_Sep2025.pdf","createdAt":"2025-10-01"},
-    {"hotelName":"Taj_Sep2025","date":"2025-09-02","metrics":{"revenue":9500,"ADR":142,"RevPAR":102,"occupancy":72},"sourceFile":"Taj_Sep2025.pdf","createdAt":"2025-10-01"}
+    {
+      "hotelName": "Taj_Sep2025",
+      "date": "2025-08-31T00:00:00.000Z",
+      "metrics": {
+        "revenue": 180000,
+        "ADR": 2000,
+        "RevPAR": 1500,
+        "occupancy": 75
+      },
+      "sourceFile": "Taj_Sep2025.xlsx",
+      "createdAt": "2025-10-06T18:03:45.425Z"
+    },
+    {
+      "hotelName": "Taj_Sep2025",
+      "date": "2025-09-01T00:00:00.000Z",
+      "metrics": {
+        "revenue": 195000,
+        "ADR": 1950,
+        "RevPAR": 1625,
+        "occupancy": 83.3
+      },
+      "sourceFile": "Taj_Sep2025.xlsx",
+      "createdAt": "2025-10-06T18:03:45.425Z"
+    },
+    {
+      "hotelName": "Taj_Sep2025",
+      "date": "2025-09-02T00:00:00.000Z",
+      "metrics": {
+        "revenue": 210000,
+        "ADR": 2000,
+        "RevPAR": 1750,
+        "occupancy": 87.5
+      },
+      "sourceFile": "Taj_Sep2025.xlsx",
+      "createdAt": "2025-10-06T18:03:45.425Z"
+    },
+    {
+      "hotelName": "Taj_Sep2025",
+      "date": "2025-09-03T00:00:00.000Z",
+      "metrics": {
+        "revenue": 240000,
+        "ADR": 2087,
+        "RevPAR": 2000,
+        "occupancy": 95.8
+      },
+      "sourceFile": "Taj_Sep2025.xlsx",
+      "createdAt": "2025-10-06T18:03:45.425Z"
+    }
   ]
 }
